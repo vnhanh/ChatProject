@@ -1,0 +1,58 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".module.main_screen.account.edit_account.ViewEditAccountFragment">
+    <data>
+
+        <import type="android.view.View" />
+
+        <import type="vn.edu.hcmute.ms14110050.chatproject.module.main_screen.account.AccountStatus" />
+
+        <variable
+            name="viewmodel"
+            type="vn.edu.hcmute.ms14110050.chatproject.module.main_screen.account.AccountViewModel" />
+
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/progress_view"
+            android:visibility="@{viewmodel.progressStatus ? View.VISIBLE : View.GONE}"
+            layout="@layout/progress_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/txt_message"
+            android:visibility="invisible"
+            android:textColor="#ff0000"
+            android:textSize="@dimen/txtSize_normal_show"
+            android:gravity="center_vertical"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <include
+            android:id="@+id/vg_edit_account"
+            android:visibility="@{viewmodel.progressStatus ? View.INVISIBLE : View.VISIBLE}"
+            layout="@layout/layout_edit_account"
+            app:viewmodel="@{viewmodel}"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_message"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </android.support.constraint.ConstraintLayout>
+
+</layout>

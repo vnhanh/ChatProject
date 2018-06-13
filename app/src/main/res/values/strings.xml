@@ -1,0 +1,115 @@
+<resources>
+    <string name="app_name">ỨNG DỤNG CHAT</string>
+    <string name="facebook_app_id">212340652717913</string>
+    <string name="fb_login_protocol_scheme">fb212340652717913</string>
+
+    <!--ACTIVITY AUTHENTICATION-->
+    <string name="action_login_face">Đăng nhập bằng facebook</string>
+    <string name="title_login">ĐĂNG NHẬP</string>
+    <string name="title_register">ĐĂNG KÝ</string>
+    <string name="hint_username">Tên ngắn gọn *</string>
+    <string name="hint_fullname">Tên đầy đủ *</string>
+    <string name="hint_email_login">Email đăng nhập *</string>
+    <string name="title_verify_account">CHỨNG THỰC TÀI KHOẢN</string>
+    <string name="title_enter_new_password">NHẬP MẬT KHẨU MỚI</string>
+    <string name="hint_verify_password">Mật khẩu chứng thực *</string>
+    <string name="hint_password">Mật khẩu *</string>
+    <string name="hint_confirm_password">Mật khẩu xác nhận *</string>
+    <string name="action_login">ĐĂNG NHẬP</string>
+    <string name="action_register">ĐĂNG KÝ</string>
+    <string name="link_open_register">Đăng ký ở đây</string>
+    <string name="link_reset_password">Reset mật khẩu</string>
+    <string name="link_login">Đã có tài khoản ? Đăng nhập ngay</string>
+    <string name="validate_email">Email không hợp lệ</string>
+    <string name="validate_password">Mật khẩu phải có ít nhất 6 ký tự, phải có và chỉ có chữ Latin và số</string>
+    <string name="validate_confirm_password">Mật khẩu xác nhận phải trùng khớp</string>
+    <string name="validate_username">Tên ngắn gọn phải có ít nhất 1 ký tự là số hoặc chữ cái</string>
+    <string name="validate_username_exist">Tên đăng nhập đã tồn tại</string>
+    <string name="validate_fullname">Tên đầy đủ phải có ít nhất 1 ký tự, và phải là ký tự chữ cái</string>
+    <string name="validate_phone">Số điện thoại không hợp lệ</string>
+    <string-array name="genders">
+        <item>Nam</item>
+        <item>Nữ</item>
+    </string-array>
+    <string name="error_task_failed">Tác vụ thất bại</string>
+
+    <!--ACTIVITY AUTHENTICATION > LOGIN > MESSAGE STATUS-->
+    <string name="login_success_couldnt_get_firebase_user">Nhập đúng thông tin nhưng không thể lấy được thông tin tài khoản. Bạn có thể thử lại</string>
+    <string name="login_success">Đăng nhập thành công</string>
+    <string name="login_failed">Đăng nhập thất bại</string>
+    <string name="login_failed_not_found_user">Đăng nhập thất bại. Không tìm thấy người dùng này</string>
+
+    <!--ACTIVITY AUTHENTICATION > REGISTER > MESSAGE STATUS-->
+    <string name="cant_get_auth">Đăng ký thất bại. Không thể lấy chứng thực</string>
+    <string name="email_exist">Đăng ký thất bại. Email đã tồn tại</string>
+    <string name="register_failed_email_bad_format">Đăng ký thất bại. Định dạng email chưa chuẩn</string>
+    <string name="register_failed_weak_password">Đăng ký thất bại. Mật khẩu quá yếu</string>
+    <string name="register_failed">Đăng ký thất bại</string>
+    <string name="couldnt_create_user_profile">Đăng ký thành công nhưng không thể tạo thông tin cho tài khoản. Bạn có thể cập nhật sau.</string>
+    <string name="register_success_couldnt_get_firebase_user">Đăng ký thành công nhưng không thể lấy được thông tin người dùng cần thiết. Vui lòng đăng nhập</string>
+    <string name="register_success">Đăng ký thành công</string>
+
+    <!--ACTIVITY MAIN-->
+    <string name="title_pager_home">HOME</string>
+    <string name="title_pager_account">ACCOUNT</string>
+    <string name="hint_search">Tìm kiếm</string>
+    <string name="logout_failed">Không lấy được thông tin người dùng. Đăng xuất thất bại.</string>
+
+    <!--FRAGMENT MENU-->
+    <string name="action_info_account">THÔNG TIN TÀI KHOẢN</string>
+    <string name="action_change_password">ĐỔI MẬT KHẨU</string>
+    <string name="action_logout">ĐĂNG XUẤT</string>
+
+    <!--FRAGMENT ACCOUNT-->
+    <string name="hint_username_frag_acc">Tên ngắn gọn</string>
+    <string name="hint_fullname_frag_acc">Tên đầy đủ</string>
+    <string name="hint_email_frag_acc">Email</string>
+    <string name="hint_phone_frag_acc">Số điện thoại</string>
+    <string name="label_birthdate">Ngày sinh:</string>
+    <string name="label_gender">Giới tính:</string>
+    <string name="action_save">LƯU</string>
+    <string name="action_verify_password">XÁC THỰC</string>
+    <string name="action_reset">RESET</string>
+    <string name="action_cancel">CANCEL</string>
+    <string name="upload_image_profile_failed">Upload ảnh tài khoản thất bại</string>
+    <string name="update_user_failed">Cập nhật thông tin cá nhân thất bại</string>
+    <string name="update_user_success">Thông tin cá nhân vừa được cập nhật</string>
+    <string name="user_info_not_changed">Thông tin tài khoản không thay đổi</string>
+    <string name="change_user_profile_success">Thay đổi thông tin cá nhân thành công</string>
+    <string name="change_user_profile_failed">Thay đổi thông tin cá nhân thất bại</string>
+    <string name="change_email_user_failed">Thay đổi email cá nhân thất bại. Có thể do bạn đã login quá lâu. Hãy đăng xuất và thử lại.</string>
+    <string name="verify_password_failed">Sai mật khẩu</string>
+    <string name="change_user_password_success">Thay đổi mật khẩu thành công</string>
+    <string name="change_user_password_failed">Thay đổi mật khẩu thất bại</string>
+    <string name="count_error_processing_data">Xử lý dữ liệu bị lỗi</string>
+    <string name="choose_birthdate">Chọn ngày sinh</string>
+    <string name="validate_birthdate_err">Người dùng phải lớn hơn 5 tuổi</string>
+    <string name="validate_birthdate_err2">Ngày tháng không hợp lệ</string>
+    <string name="tilte_pick_image_dialog">CHỌN ẢNḤ</string>
+
+    <!--FRAGMENT HOME-->
+    <string name="title_search">Tìm kiếm&#8230;</string>
+    <string name="message_you_send_1_image">Bạn đã gửi 1 ảnh</string>
+    <string name="message_someone_send_1_image">Đã gửi 1 ảnh</string>
+    <string name="message_you_send_1_sound_file">Bạn đã gửi 1 tệp ghi âm</string>
+    <string name="message_someone_send_1_sound_file">Đã gửi 1 tệp ghi âm</string>
+    <string name="action_add_friend">THÊM</string>
+    <string name="description_image_profile">Ảnh tài khoản</string>
+    <string name="text_default_no_last_message">Các bạn chưa bắt đầu trò chuyện&#8230;</string>
+    <string name="message_loading_add_friend">Đang xử lý&#8230;</string>
+    <string name="message_add_friend_success">Thêm bạn thành công</string>
+    <string name="message_add_friend_failed">Thêm bạn thất bại</string>
+
+    <!--ACTIVITY CHAT-->
+    <string name="update_data_failed_and_exit">Tải dữ liệu không thành công. Thoát màn hình</string>
+    <string name="send_message_faield">Gửi tin nhắn thất bại</string>
+    <string name="upload_image_message_failed">Upload ảnh thất bại</string>
+    <string name="upload_record_message_failed">Upload file ghi âm thất bại</string>
+    <string name="start_record">Bắt đầu ghi âm&#8230;</string>
+    <string name="ask_wanna_send_record_file">Có muốn gửi file ghi âm hay không ?</string>
+    <string name="action_yes">CÓ</string>
+    <string name="action_no">KHÔNG</string>
+    <string name="play_audio_failed">Play file audio bị lỗi</string>
+    <string name="file_audio_is_running">Đang play file audio</string>
+
+</resources>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="validation"
+            type="vn.edu.hcmute.ms14110050.chatproject.module.main_screen.account.validation.VerifyAccountValidation" />
+
+        <variable
+            name="viewmodel"
+            type="vn.edu.hcmute.ms14110050.chatproject.module.main_screen.account.AccountViewModel" />
+
+        <variable
+            name="password"
+            type="String" />
+
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:background="@drawable/bg_white_square_corner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <include
+            android:id="@+id/progress_view"
+            android:visibility="@{viewmodel.verifyAccProgressStatus ? View.VISIBLE : View.GONE}"
+            layout="@layout/progress_view"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <android.support.constraint.ConstraintLayout
+            android:visibility="@{viewmodel.verifyAccProgressStatus ? View.INVISIBLE : View.VISIBLE}"
+            android:paddingStart="@dimen/larg_space"
+            android:paddingEnd="@dimen/larg_space"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <TextView
+                android:id="@+id/title"
+                android:text="@string/title_verify_account"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#000"
+                android:gravity="center_horizontal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/normal_space"
+                android:paddingBottom="@dimen/normal_space"
+                android:layout_marginTop="@dimen/normal_space"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintVertical_bias="0"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/til_verify_password"/>
+
+            <!--PASSWORD TO VERIFY-->
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/til_verify_password"
+                app:addErrorViewer="@{validation.passwordValidator}"
+                app:passwordToggleEnabled="true"
+                app:errorEnabled="true"
+                app:errorTextAppearance="@style/ErrorTextInputLayoutStyle"
+                app:hintTextAppearance="@style/AccTextInputLayoutStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/xlarg_space"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/title"
+                app:layout_constraintBottom_toBottomOf="@+id/btn_submit">
+
+                <EditText
+                    android:id="@+id/edt_verify_password"
+                    android:text="@={password}"
+                    app:addTextWatcher="@{validation.passwordValidator}"
+                    android:inputType="textPassword"
+                    android:hint="@string/hint_verify_password"
+                    style="@style/EditTextAccount" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <!--ACTION BUTTONS LINE-->
+            <!--NÚT LƯU-->
+            <TextView
+                android:id="@+id/btn_submit"
+                android:enabled="@{validation.valid}"
+                style="@style/ProcessPasswordSubmitButton"
+                android:background="@{validation.valid ? @drawable/bg_button_submit : @drawable/bg_button_submit_disabled}"
+                android:text="@string/action_verify_password"
+                android:layout_marginTop="@dimen/xxlarg_space"
+                android:layout_marginBottom="@dimen/xxlarg_space"
+                app:layout_constraintEnd_toStartOf="@+id/btn_cancel"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/til_verify_password"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <!--NÚT RESET - NẾU ĐANG CHỈNH SỬA THÔNG TIN TÀI KHOẢN-->
+            <!--NÚT CANCEL - NẾU ĐANG ĐỔI PASSWORD-->
+            <TextView
+                android:id="@+id/btn_cancel"
+                style="@style/ProcessPasswordSubmitButton"
+                android:background="@drawable/bg_button_cancel"
+                android:text="@string/action_cancel"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/btn_submit"
+                app:layout_constraintTop_toTopOf="@id/btn_submit"/>
+
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.constraint.ConstraintLayout>
+
+</layout>

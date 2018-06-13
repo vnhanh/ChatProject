@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewmodel"
+            type="vn.edu.hcmute.ms14110050.chatproject.module.chat.ChatViewModel" />
+
+    </data>
+
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".module.chat.ChatActivity">
+
+        <include
+            android:visibility="@{viewmodel.isLoading ? View.VISIBLE : View.GONE}"
+            layout="@layout/progress_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <android.support.constraint.ConstraintLayout
+            android:visibility="@{viewmodel.isLoading ? View.INVISIBLE : View.VISIBLE}"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerview"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/line"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:paddingLeft="@dimen/larg_space"
+                android:paddingRight="@dimen/larg_space"
+                android:paddingTop="@dimen/larg_space"
+                android:paddingBottom="@dimen/larg_space"/>
+
+            <View
+                android:id="@+id/line"
+                android:background="#a8a8a8"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/normal_space"
+                android:layout_marginBottom="@dimen/small_space"
+                app:layout_constraintTop_toBottomOf="@id/recyclerview"
+                app:layout_constraintBottom_toTopOf="@id/edt_message" />
+
+            <ImageView
+                android:id="@+id/img_select_image"
+                android:onClick="@{() -> viewmodel.onClickImagePicker()}"
+                android:src="@drawable/ic_photo_32dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/larg_space"
+                android:layout_marginEnd="@dimen/normal_space"
+                android:layout_marginBottom="@dimen/small_space"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/img_record"
+                app:layout_constraintBottom_toBottomOf="@id/edt_message"/>
+
+            <ImageView
+                android:id="@+id/img_record"
+                android:src="@drawable/ic_record_32dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/normal_space"
+                android:layout_marginBottom="@dimen/small_space"
+                app:layout_constraintStart_toEndOf="@id/img_select_image"
+                app:layout_constraintEnd_toStartOf="@id/edt_message"
+                app:layout_constraintBottom_toBottomOf="@id/edt_message"/>
+
+            <EditText
+                android:id="@+id/edt_message"
+                android:inputType="textMultiLine"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/larg_space"
+                app:layout_constraintStart_toEndOf="@id/img_record"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+        </android.support.constraint.ConstraintLayout>
+
+    </RelativeLayout>
+
+</layout>

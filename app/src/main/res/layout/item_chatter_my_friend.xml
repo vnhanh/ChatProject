@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="resources"
+            type="android.content.res.Resources" />
+
+        <variable
+            name="data"
+            type="vn.edu.hcmute.ms14110050.chatproject.model.node_users.chatter.Chatter"/>
+
+        <variable
+            name="viewmodel"
+            type="vn.edu.hcmute.ms14110050.chatproject.module.main_screen.home.adapter.viewmodel.FriendViewModel" />
+
+    </data>
+
+    <android.support.v7.widget.CardView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        app:cardCornerRadius="@dimen/small_space"
+        app:cardElevation="@dimen/small_space"
+        android:background="#fff"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/xsmall_space"
+        android:layout_marginBottom="@dimen/xsmall_space">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/xsmall_space">
+
+            <ImageView
+                android:id="@+id/image_profile"
+                android:contentDescription="@string/description_image_profile"
+                android:layout_width="@dimen/size_img_item_chatter"
+                android:layout_height="@dimen/size_img_item_chatter"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/txt_fullname"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <TextView
+                android:id="@+id/txt_fullname"
+                android:text="@{data.fullname}"
+                style="@style/FullNameTextView_ItemChatter"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/larg_space"
+                android:layout_marginEnd="@dimen/small_space"
+                app:layout_goneMarginEnd="0dp"
+                app:layout_constraintStart_toEndOf="@id/image_profile"
+                app:layout_constraintEnd_toStartOf="@id/txt_time"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/txt_last_messsage"/>
+
+            <TextView
+                android:id="@+id/txt_time"
+                android:visibility='@{data.lastSendTime.equals("") ? View.GONE : View.VISIBLE}'
+                android:text="@{data.lastSendTime}"
+                android:textColor="#838383"
+                android:textSize="@dimen/txtSize_normal_show"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@id/txt_fullname"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/txt_fullname"
+                app:layout_constraintBottom_toBottomOf="@id/txt_fullname"/>
+
+            <TextView
+                android:id="@+id/txt_last_messsage"
+                android:text="@{data.getLastMessageText(resources, data.lastMessage)}"
+                style="@style/LastMessageTextView_ItemChatter"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@id/txt_fullname"
+                app:layout_constraintEnd_toEndOf="@id/txt_time"
+                app:layout_constraintTop_toBottomOf="@id/txt_fullname"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.v7.widget.CardView>
+
+</layout>

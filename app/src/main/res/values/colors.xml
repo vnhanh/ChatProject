@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#5161c6</color>
+
+    <color name="colorSpinner">#FF5161C6</color>
+    <color name="colorTextLink01">#0206d9</color>
+    <color name="colorTextLink02">#f9ad2a</color>
+
+    <!--FRAGMENT ACCOUNT-->
+    <color name="colorTextFragAcc">#2d2d2d</color>
+
+</resources>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+
+    <dimen name="txtSize_normal_show">14sp</dimen>
+    <dimen name="txtSize_normal_input">16sp</dimen>
+
+    <dimen name="txtSize_xxsmall">10sp</dimen>
+    <dimen name="txtSize_xsmall">12sp</dimen>
+    <dimen name="txtSize_small">13sp</dimen>
+    <dimen name="txtSize_normal">14sp</dimen>
+    <dimen name="txtSize_large">16sp</dimen>
+    <dimen name="txtSize_xlarge">18sp</dimen>
+
+    <dimen name="xsmall_space">3dp</dimen>
+    <dimen name="small_space">5dp</dimen>
+    <dimen name="normal_space">8dp</dimen>
+    <dimen name="larg_space">12dp</dimen>
+    <dimen name="xlarg_space">16dp</dimen>
+    <dimen name="xxlarg_space">20dp</dimen>
+
+    <!--ACTIVITY AUTHENTICATION-->
+    <!--FRAGMENT LOGIN-->
+    <dimen name="size_img_login">120dp</dimen>
+    <dimen name="margin_bottom_of_img_login">18dp</dimen>
+    <dimen name="padding_of_login_face">8dp</dimen>
+    <dimen name="margin_bottom_of_login_face">40dp</dimen>
+    <dimen name="txtSize_login_face">16sp</dimen>
+    <dimen name="imgSize_login_face">18dp</dimen>
+    <dimen name="margin_left_of_img_facebook">4dp</dimen>
+    <dimen name="margin_bottom_of_til_login">16dp</dimen>
+    <dimen name="margin_left_hint_input_text">8dp</dimen>
+    <dimen name="margin_bottom_of_button_login">20dp</dimen>
+    <dimen name="margin_bottom_to_button_login">24dp</dimen>
+
+    <!--FRAGMENT REGISTER-->
+    <dimen name="margin_bottom_of_til_register">16dp</dimen>
+    <dimen name="margin_bottom_of_link_auth">4dp</dimen>
+
+    <!--FRAGMENT ACCOUNT-->
+    <dimen name="margin_top_first_line_frag_edit_account">18dp</dimen>
+    <dimen name="margin_top_line_frag_edit_account">14dp</dimen>
+    <dimen name="large_margin_top_line_frag_edit_account">26dp</dimen>
+    <dimen name="margin_horizontal_line_frag_edit_account">10dp</dimen>
+    <dimen name="margin_top_of_button_frag_acc">12dp</dimen>
+    <dimen name="txtSize_button">18sp</dimen>
+    <dimen name="txtSize_acc_button">17sp</dimen>
+    <dimen name="txtSize_small_acc_button">16sp</dimen>
+    <dimen name="max_size_profile_image">240dp</dimen>
+
+    <!--FRAGMENT HOME-->
+    <dimen name="size_img_item_chatter">60dp</dimen>
+    <dimen name="elevation_cardview_img_profile">@dimen/normal_space</dimen>
+    <dimen name="card_corner_radius_img_item_chatter">30dp</dimen><!--50% của @dimen/size_img_item_chatter-->
+
+    <!--ACTIVITY CHAT-->
+    <dimen name="size_image_profile_act_chat">36dp</dimen>
+    <dimen name="card_corner_radius_image_profile_act_chat">18dp</dimen>
+    <dimen name="max_size_image_message">240dp</dimen><!--KÍCH THƯỚC TỐI ĐA CỦA 1 BỨC ẢNH TRONG TIN NHẮN-->
+    <dimen name="min_size_image_message">100dp</dimen><!--KÍCH THƯỚC TỐI THIỂU CỦA 1 BỨC ẢNH TRONG TIN NHẮN-->
+    <dimen name="corner_image_message">10dp</dimen>
+    <dimen name="margin_end_message_content_send">44dp</dimen><!--MARGIN END CỦA NỘI DUNG TIN NHẮN DO USER GỬI-->
+    <dimen name="width_seekbar_audio_message">200dp</dimen>
+    <dimen name="height_seekbar_audio_message">3dp</dimen>
+
+</resources>

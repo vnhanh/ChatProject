@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="resources"
+            type="android.content.res.Resources" />
+
+        <variable
+            name="viewmodel"
+            type="vn.edu.hcmute.ms14110050.chatproject.module.chat.viewholder.item_text.TextMessageViewModel" />
+
+        <variable
+            name="message"
+            type="vn.edu.hcmute.ms14110050.chatproject.model.node_chats.Message" />
+
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/normal_space"
+        android:paddingBottom="@dimen/normal_space"
+        android:layout_marginTop="@dimen/small_space"
+        android:layout_marginBottom="@dimen/small_space">
+
+        <TextView
+            android:id="@+id/txt_time"
+            android:visibility='@{viewmodel.createdTime.equals("") ? View.GONE : View.VISIBLE}'
+            android:text="@{viewmodel.createdTime}"
+            style="@style/TimeTextViewActivityChat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <TextView
+            android:id="@+id/txt_message"
+            android:text="@{message.content}"
+            android:background="@drawable/bg_text_message_send"
+            android:textSize="@dimen/txtSize_small"
+            android:textColor="#fff"
+            android:paddingTop="@dimen/small_space"
+            android:paddingBottom="@dimen/small_space"
+            android:paddingStart="@dimen/normal_space"
+            android:paddingEnd="@dimen/normal_space"
+            android:layout_marginTop="@dimen/small_space"
+            app:layout_goneMarginTop="0dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txt_time" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</layout>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="resources"
+            type="android.content.res.Resources" />
+
+        <variable
+            name="viewmodel"
+            type="vn.edu.hcmute.ms14110050.chatproject.module.chat.viewholder.item_sound.SoundMessageViewModel" />
+
+        <variable
+            name="message"
+            type="vn.edu.hcmute.ms14110050.chatproject.model.node_chats.Message" />
+
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/normal_space"
+        android:paddingBottom="@dimen/normal_space"
+        android:layout_marginTop="@dimen/normal_space"
+        android:layout_marginBottom="@dimen/normal_space">
+
+        <TextView
+            android:id="@+id/txt_time"
+            android:visibility='@{viewmodel.createdTime.equals("") ? View.GONE : View.VISIBLE}'
+            android:text="@{viewmodel.createdTime}"
+            style="@style/TimeTextViewActivityChat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <ImageView
+            android:id="@+id/img_play"
+            android:onClick="@{viewmodel::onClickPlayBtn}"
+            android:src="@{viewmodel.playDrawable}"
+            android:rotation="180"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/normal_space"
+            app:layout_goneMarginTop="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txt_time"/>
+
+        <SeekBar
+            android:id="@+id/play_seekbar"
+            android:thumb="@null"
+            android:progressDrawable="@drawable/custom_seekbar_progress"
+            android:rotation="180"
+            android:max="@{viewmodel.audioDuration}"
+            android:progress="@{viewmodel.playAudioProgress}"
+            android:onProgressChanged="@{viewmodel.onProgressSeekbarChanged}"
+            android:layout_width="@dimen/width_seekbar_audio_message"
+            android:layout_height="@dimen/height_seekbar_audio_message"
+            app:layout_constraintEnd_toStartOf="@id/img_play"
+            app:layout_constraintTop_toTopOf="@id/img_play"
+            app:layout_constraintBottom_toBottomOf="@id/img_play"/>
+
+    </android.support.constraint.ConstraintLayout>
+
+</layout>
